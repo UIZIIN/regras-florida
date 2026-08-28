@@ -1,0 +1,3045 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Florida RP | Regras Oficiais</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --pink:#ff3d9a;
+    --purple:#8d3dff;
+    --black:#050505;
+    --dark:#0b0b0d;
+    --card:#101014;
+    --gray:#a6a6ad;
+    --white:#f4f4f5;
+    --border:rgba(255,255,255,.12);
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:120px;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--black);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* =========================
+   FUNDO
+========================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-3;
+    background:
+        radial-gradient(circle at 85% 10%,rgba(141,61,255,.20),transparent 25%),
+        radial-gradient(circle at 15% 70%,rgba(255,61,154,.10),transparent 30%),
+        #050505;
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.3;
+    background-image:
+        linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+    background-size:50px 50px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    padding:18px 5%;
+    transition:.3s;
+}
+
+header.scrolled{
+    background:rgba(5,5,5,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    max-width:1400px;
+    margin:auto;
+    min-height:70px;
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(15,15,18,.90);
+    border:1px solid var(--border);
+
+    clip-path:polygon(
+        0 0,
+        calc(100% - 25px) 0,
+        100% 25px,
+        100% 100%,
+        25px 100%,
+        0 calc(100% - 25px)
+    );
+}
+
+.logo{
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:-1px;
+    text-transform:uppercase;
+}
+
+.logo span{
+    color:var(--pink);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:3px;
+    color:#9d9da5;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.nav-links a.active{
+    color:var(--pink);
+}
+
+.home-btn{
+    background:var(--pink);
+    color:white!important;
+
+    padding:17px 25px;
+
+    clip-path:polygon(
+        0 0,
+        calc(100% - 12px) 0,
+        100% 12px,
+        100% 100%,
+        12px 100%,
+        0 calc(100% - 12px)
+    );
+
+    transition:.3s!important;
+}
+
+.home-btn:hover{
+    background:white;
+    color:black!important;
+}
+
+.menu-mobile{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:600px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    padding:160px 8% 100px;
+
+    overflow:hidden;
+
+    border-bottom:1px solid var(--border);
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.96),
+            rgba(0,0,0,.72),
+            rgba(0,0,0,.35)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.95),
+            transparent 60%
+        );
+
+    z-index:-1;
+}
+
+.hero-glow{
+    position:absolute;
+
+    width:700px;
+    height:140px;
+
+    left:-180px;
+    top:35%;
+
+    background:var(--pink);
+
+    filter:blur(70px);
+
+    opacity:.25;
+
+    transform:rotate(-8deg);
+}
+
+.hero-glow.two{
+    top:auto;
+    bottom:10%;
+    left:-200px;
+    width:500px;
+    opacity:.20;
+    background:var(--purple);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-tag{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    color:var(--pink);
+
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:4px;
+
+    margin-bottom:25px;
+}
+
+.hero-tag::before{
+    content:"";
+
+    width:45px;
+    height:1px;
+
+    background:var(--pink);
+}
+
+.hero h1{
+    font-size:clamp(50px,7vw,105px);
+
+    line-height:.88;
+
+    letter-spacing:-5px;
+
+    text-transform:uppercase;
+
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:var(--pink);
+}
+
+.hero-description{
+    max-width:760px;
+
+    margin-top:35px;
+
+    color:#b0b0b6;
+
+    line-height:1.9;
+
+    font-size:15px;
+}
+
+.hero-info{
+    position:absolute;
+
+    bottom:30px;
+    left:8%;
+
+    display:flex;
+    gap:40px;
+
+    color:#777;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+}
+
+.hero-info span:first-child{
+    color:var(--pink);
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+main{
+    padding:100px 6%;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+/* =========================
+   PESQUISA
+========================= */
+
+.search-section{
+    margin-bottom:90px;
+}
+
+.section-number{
+    color:var(--pink);
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+}
+
+.search-title{
+    font-size:clamp(35px,4vw,60px);
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:-2px;
+
+    margin-bottom:30px;
+}
+
+.search-title span{
+    color:var(--pink);
+}
+
+.search-box{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    background:#0d0d10;
+
+    border:1px solid var(--border);
+
+    min-height:65px;
+
+    transition:.3s;
+
+    clip-path:polygon(
+        0 0,
+        calc(100% - 18px) 0,
+        100% 18px,
+        100% 100%,
+        18px 100%,
+        0 calc(100% - 18px)
+    );
+}
+
+.search-box:focus-within{
+    border-color:var(--pink);
+
+    box-shadow:
+        0 0 30px rgba(255,61,154,.10);
+}
+
+.search-icon{
+    font-size:20px;
+    margin-left:22px;
+}
+
+#ruleSearch{
+    flex:1;
+
+    background:none;
+    border:none;
+    outline:none;
+
+    color:white;
+
+    padding:20px;
+
+    font-size:14px;
+}
+
+#ruleSearch::placeholder{
+    color:#666;
+}
+
+.clear-search{
+    margin-right:15px;
+
+    width:35px;
+    height:35px;
+
+    border:1px solid var(--border);
+
+    background:#15151a;
+
+    color:white;
+
+    cursor:pointer;
+
+    display:none;
+}
+
+.search-info{
+    color:#666;
+    font-size:11px;
+    margin-top:12px;
+    letter-spacing:1px;
+}
+
+/* =========================
+   CATEGORIAS
+========================= */
+
+.category{
+    margin-bottom:120px;
+}
+
+.category-header{
+    display:flex;
+
+    align-items:end;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    padding-bottom:25px;
+
+    margin-bottom:35px;
+
+    border-bottom:1px solid var(--border);
+}
+
+.category-header-left{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.category-icon{
+    width:58px;
+    height:58px;
+
+    display:grid;
+    place-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,61,154,.15),
+            rgba(141,61,255,.10)
+        );
+
+    border:1px solid rgba(255,61,154,.35);
+
+    font-size:23px;
+
+    clip-path:polygon(
+        0 0,
+        calc(100% - 10px) 0,
+        100% 10px,
+        100% 100%,
+        10px 100%,
+        0 calc(100% - 10px)
+    );
+}
+
+.category-number{
+    color:var(--pink);
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    margin-bottom:8px;
+}
+
+.category h2{
+    font-size:clamp(30px,4vw,55px);
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:-2px;
+}
+
+.category-description{
+    color:#888;
+
+    font-size:13px;
+
+    max-width:400px;
+
+    line-height:1.7;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.rule-card{
+    position:relative;
+
+    padding:38px;
+
+    margin-bottom:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.03),
+            transparent
+        ),
+        #0c0c10;
+
+    border:1px solid var(--border);
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    clip-path:polygon(
+        0 0,
+        calc(100% - 18px) 0,
+        100% 18px,
+        100% 100%,
+        18px 100%,
+        0 calc(100% - 18px)
+    );
+}
+
+.rule-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:var(--pink);
+
+    filter:blur(90px);
+
+    opacity:0;
+
+    right:-110px;
+    top:-110px;
+
+    transition:.4s;
+}
+
+.rule-card:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(255,61,154,.45);
+}
+
+.rule-card:hover::before{
+    opacity:.12;
+}
+
+.rule-card h3{
+    position:relative;
+
+    font-size:22px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    margin-bottom:22px;
+
+    padding-left:18px;
+}
+
+.rule-card h3::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:2px;
+
+    width:4px;
+    height:24px;
+
+    background:linear-gradient(
+        var(--pink),
+        var(--purple)
+    );
+}
+
+.rule-card p{
+    position:relative;
+
+    color:var(--gray);
+
+    line-height:1.9;
+
+    font-size:14px;
+
+    margin-bottom:16px;
+}
+
+.rule-card ul{
+    position:relative;
+
+    margin:15px 0 20px 20px;
+}
+
+.rule-card li{
+    color:var(--gray);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    margin-bottom:7px;
+}
+
+.rule-card li::marker{
+    color:var(--pink);
+}
+
+.subtopic{
+    position:relative;
+
+    padding:24px;
+
+    margin:20px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,61,154,.05),
+            rgba(141,61,255,.03)
+        );
+
+    border-left:2px solid var(--pink);
+
+    border-top:1px solid rgba(255,255,255,.05);
+    border-right:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.subtopic h4{
+    color:var(--pink);
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+    text-transform:uppercase;
+}
+
+.punishment{
+    position:relative;
+
+    margin-top:25px;
+
+    padding:17px 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,61,154,.10),
+            rgba(141,61,255,.04)
+        );
+
+    border-left:3px solid var(--pink);
+
+    color:#c5c5ca;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+.punishment strong{
+    color:var(--pink);
+
+    letter-spacing:1px;
+}
+
+/* =========================
+   TABELA
+========================= */
+
+.table-wrapper{
+    overflow-x:auto;
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:650px;
+}
+
+th{
+    text-align:left;
+
+    padding:18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,61,154,.18),
+            rgba(141,61,255,.10)
+        );
+
+    color:white;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+td{
+    padding:17px 18px;
+
+    color:#aaa;
+
+    font-size:13px;
+
+    border-bottom:1px solid var(--border);
+}
+
+tr{
+    transition:.25s;
+}
+
+tr:hover td{
+    background:rgba(255,61,154,.035);
+    color:white;
+}
+
+/* =========================
+   SEM RESULTADO
+========================= */
+
+#noResults{
+    display:none;
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    border:1px dashed rgba(255,61,154,.35);
+
+    background:rgba(255,61,154,.025);
+
+    margin-bottom:80px;
+}
+
+#noResults strong{
+    display:block;
+
+    color:white;
+
+    font-size:22px;
+
+    margin-bottom:10px;
+}
+
+#noResults span{
+    color:#777;
+    font-size:13px;
+}
+
+.search-hidden{
+    display:none!important;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.rules-final{
+    padding:120px 20px;
+
+    text-align:center;
+
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(141,61,255,.16),
+            transparent 45%
+        );
+}
+
+.rules-final .section-number{
+    text-align:center;
+}
+
+.rules-final h2{
+    max-width:1000px;
+
+    margin:20px auto;
+
+    font-size:clamp(45px,7vw,90px);
+
+    line-height:.9;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:-4px;
+}
+
+.rules-final h2 span{
+    color:var(--pink);
+}
+
+.rules-final p{
+    max-width:650px;
+
+    margin:30px auto;
+
+    color:#999;
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+.btn{
+    display:inline-block;
+
+    border:1px solid var(--border);
+
+    padding:18px 25px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+
+    background:transparent;
+}
+
+.btn-primary{
+    background:var(--pink);
+
+    border-color:var(--pink);
+}
+
+.btn-primary:hover{
+    background:white;
+
+    color:black;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 35px rgba(255,61,154,.25);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:70px 6% 30px;
+
+    background:#080808;
+}
+
+.footer-grid{
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+
+    padding-bottom:50px;
+}
+
+.footer-description{
+    color:var(--gray);
+
+    line-height:1.8;
+
+    margin-top:20px;
+
+    max-width:400px;
+
+    font-size:13px;
+}
+
+.footer-column h4{
+    margin-bottom:20px;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+}
+
+.footer-column a{
+    display:block;
+
+    color:#888;
+
+    font-size:13px;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+}
+
+.footer-column a:hover{
+    color:var(--pink);
+}
+
+.copyright{
+    max-width:1400px;
+
+    margin:auto;
+
+    border-top:1px solid var(--border);
+
+    padding-top:25px;
+
+    color:#666;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+}
+
+.copyright span:last-child{
+    color:var(--pink);
+}
+
+/* =========================
+   MARK
+========================= */
+
+mark{
+    background:rgba(255,61,154,.25);
+
+    color:white;
+
+    padding:2px 4px;
+
+    border-radius:3px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        position:absolute;
+
+        top:100%;
+
+        left:5%;
+        right:5%;
+
+        background:#101014;
+
+        border:1px solid var(--border);
+
+        padding:25px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:12px;
+    }
+
+    .menu-mobile{
+        display:block;
+    }
+
+    .category-header{
+        align-items:start;
+
+        flex-direction:column;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    header{
+        padding:10px 3%;
+    }
+
+    .navbar{
+        padding:0 18px;
+        min-height:60px;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .hero{
+        padding:130px 7% 90px;
+
+        min-height:600px;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .hero-info{
+        display:none;
+    }
+
+    main{
+        padding:70px 5%;
+    }
+
+    .category{
+        margin-bottom:80px;
+    }
+
+    .rule-card{
+        padding:25px;
+    }
+
+    .rule-card h3{
+        font-size:18px;
+    }
+
+    .category h2{
+        font-size:32px;
+    }
+
+    .category-icon{
+        width:50px;
+        height:50px;
+    }
+
+    .subtopic{
+        padding:18px;
+    }
+
+    .rules-final{
+        padding:90px 20px;
+    }
+
+    .rules-final h2{
+        letter-spacing:-2px;
+    }
+
+    .copyright{
+        flex-direction:column;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<!-- =========================
+     MENU
+========================= -->
+
+<header id="header">
+
+<nav class="navbar">
+
+<a href="#inicio" class="logo">
+FLORIDA<span>RP</span>
+</a>
+
+<div class="nav-links" id="navLinks">
+
+<a href="#inicio">INÍCIO</a>
+
+<a href="#gerais">REGRAS GERAIS</a>
+
+<a href="#basicas">REGRAS BÁSICAS</a>
+
+<a href="#ilegal">ILEGAL</a>
+
+<a href="#policia">POLÍCIA</a>
+
+<a href="#acoes">AÇÕES</a>
+
+<a href="#sequestro">SEQUESTROS</a>
+
+<a href="#punicoes">PUNIÇÕES</a>
+
+<a href="#inicio" class="home-btn">
+INÍCIO
+</a>
+
+</div>
+
+<button class="menu-mobile" id="menuMobile">
+☰
+</button>
+
+</nav>
+
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-glow"></div>
+<div class="hero-glow two"></div>
+
+<div class="hero-content">
+
+<div class="hero-tag">
+FLORIDA ROLEPLAY
+</div>
+
+<h1>
+REGRAS<br>
+<span>OFICIAIS.</span>
+</h1>
+
+<p class="hero-description">
+Este regulamento foi desenvolvido para garantir um ambiente
+organizado, justo e imersivo para todos os jogadores da Florida RP.
+O objetivo das regras não é limitar o Roleplay, mas garantir uma
+experiência equilibrada, respeitosa e divertida para toda a comunidade.
+</p>
+
+</div>
+
+<div class="hero-info">
+
+<span>01</span> <span>FLORIDA RP</span> <span>REGULAMENTO OFICIAL</span>
+
+</div>
+
+</section>
+
+<main>
+
+<div class="container">
+
+<!-- =========================
+     PESQUISA
+========================= -->
+
+<section class="search-section">
+
+<div class="section-number">
+00 — CONSULTA
+</div>
+
+<h2 class="search-title">
+PESQUISE UMA <span>REGRA.</span>
+</h2>
+
+<div class="search-box">
+
+<span class="search-icon">⌕</span>
+
+<input
+type="search"
+id="ruleSearch"
+placeholder="Pesquisar regra... Ex.: RDM, Metagaming, Polícia, Sequestro"
+
+>
+
+<button
+class="clear-search"
+id="clearSearch"
+onclick="clearSearch()">
+✕ </button>
+
+</div>
+
+<div class="search-info" id="searchInfo">
+Digite uma palavra para pesquisar em todas as regras.
+</div>
+
+</section>
+
+<div id="noResults">
+
+<strong>NENHUMA REGRA ENCONTRADA</strong>
+
+<span>
+Tente pesquisar outro termo.
+</span>
+
+</div>
+
+<!-- =========================
+     REGRAS GERAIS
+========================= -->
+
+<section class="category" id="gerais">
+
+<div class="category-header">
+
+<div class="category-header-left">
+
+<div class="category-icon">
+📜
+</div>
+
+<div>
+
+<div class="category-number">
+01 — REGULAMENTO
+</div>
+
+<h2>REGRAS GERAIS</h2>
+
+</div>
+
+</div>
+
+<p class="category-description">
+Normas gerais que devem ser seguidas por todos os jogadores da Florida RP.
+</p>
+
+</div>
+
+<article class="rule-card">
+
+<h3>MODIFICAÇÕES</h3>
+
+<p>
+Fica vedada a utilização, divulgação, comercialização ou compartilhamento
+de ferramentas, códigos, scripts, modificações ou softwares não autorizados
+que interfiram no funcionamento do servidor ou concedam benefícios indevidos.
+</p>
+
+<p>
+Incluem-se cheats, exploits, mods irregulares, injetores, macros e qualquer
+mecanismo destinado a obter vantagem ilícita.
+</p>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+Banimento permanente ou até ser telado pela Administração.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>SAFE-ZONES</h3>
+
+<p>
+Safe-Zones são áreas protegidas. É proibido iniciar ações criminosas,
+confrontos, abordagens hostis, assaltos ou sequestros nesses locais.
+</p>
+
+<div class="subtopic">
+
+<h4>LOCAIS CONSIDERADOS SAFE-ZONES</h4>
+
+<ul>
+<li>Hospitais;</li>
+<li>Restaurantes;</li>
+<li>Spawn da cidade;</li>
+<li>Garagens públicas;</li>
+<li>Praça Central;</li>
+<li>Farmácias.</li>
+</ul>
+
+</div>
+
+<p>
+Utilizar uma Safe-Zone intencionalmente para impedir ou evitar o
+desenvolvimento de uma ação poderá ser considerado Anti-RP.
+</p>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+60 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>CAIXA 2</h3>
+
+<p>
+Considera-se Caixa 2 toda conduta em que um jogador desvia, oculta,
+retém ou utiliza itens, recursos ou valores de uma organização para
+benefício próprio ou de terceiros sem autorização.
+</p>
+
+<ul>
+<li>Desviar ou ocultar itens e recursos;</li>
+<li>Apropriar-se de materiais pertencentes à organização;</li>
+<li>Revender armas ou equipamentos obtidos por corporações;</li>
+<li>Utilizar exploits ou métodos fraudulentos para obter vantagens.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+Banimento permanente.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>MONITORAMENTO ADMINISTRATIVO — TELAGEM</h3>
+
+<p>
+A Administração poderá solicitar procedimentos de verificação para
+preservar a integridade e segurança do servidor.
+</p>
+
+<div class="subtopic">
+
+<h4>REGRAS GERAIS</h4>
+
+<ul>
+<li>Utilização obrigatória de Windows 10 ou Windows 11;</li>
+<li>É proibido desativar ou modificar permanentemente o Windows Defender;</li>
+<li>É proibido desconectar após ser convocado para telagem sem autorização;</li>
+<li>É proibido trocar de computador após a convocação;</li>
+<li>É proibido manipular arquivos para ocultar informações da fiscalização;</li>
+<li>Os serviços solicitados pela Administração deverão permanecer disponíveis durante o procedimento.</li>
+</ul>
+
+</div>
+
+<div class="subtopic">
+
+<h4>PRESERVAÇÃO DE EVIDÊNCIAS</h4>
+
+<p>
+Após uma solicitação de telagem, fica proibido:
+</p>
+
+<ul>
+<li>Remover dispositivos USB ou periféricos relevantes;</li>
+<li>Formatar o computador;</li>
+<li>Restaurar o sistema;</li>
+<li>Executar programas de limpeza;</li>
+<li>Desinstalar programas com a intenção de ocultar evidências.</li>
+</ul>
+
+</div>
+
+<div class="subtopic">
+
+<h4>COMUNIDADES DE CHEATS</h4>
+
+<p>
+É proibido manter vínculo com comunidades destinadas à comercialização,
+distribuição ou desenvolvimento de cheats, bypasses ou exploits.
+</p>
+
+</div>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+Banimento permanente em caso de descumprimento ou recusa injustificada.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>BLACKLIST</h3>
+
+<div class="subtopic">
+
+<h4>EMPREGOS ILEGAIS</h4>
+
+<p>
+Ao deixar um emprego ilegal, o cidadão deverá cumprir 3 dias de
+Blacklist antes de entrar em outro emprego ilegal.
+</p>
+
+</div>
+
+<div class="subtopic">
+
+<h4>EMPREGOS LEGAIS</h4>
+
+<p>
+Ao deixar um emprego legal, deverá cumprir 3 dias antes de ingressar
+em outro emprego legal.
+</p>
+
+</div>
+
+<div class="punishment">
+<strong>REGRA:</strong>
+Legal → Legal: 3 dias. Ilegal → Ilegal: 3 dias.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>SEGUNDO SLOT</h3>
+
+<p>
+É permitido possuir um segundo personagem desde que ambos possuam
+desenvolvimento independente.
+</p>
+
+<div class="subtopic">
+
+<h4>É PROIBIDO</h4>
+
+<ul>
+<li>Interação entre personagens do mesmo jogador;</li>
+<li>Transferência de dinheiro, veículos ou itens;</li>
+<li>Utilizar informações de um personagem no outro;</li>
+<li>Utilizar um personagem para beneficiar o outro;</li>
+<li>Compartilhar patrimônio;</li>
+<li>Possuir personagem ilegal enquanto outro integra corporação policial.</li>
+</ul>
+
+</div>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+Advertência, bloqueio do segundo slot ou outras sanções administrativas.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>ASSALTOS</h3>
+
+<p>
+Os assaltos são permitidos entre <strong>23h00 e 06h00.</strong>
+</p>
+
+<ul>
+<li>É proibido iniciar assalto em Safe-Zones;</li>
+<li>É proibido iniciar assalto em áreas movimentadas;</li>
+<li>São necessárias no mínimo 2 pessoas;</li>
+<li>É proibido assaltar policiais em serviço.</li>
+</ul>
+
+<div class="punishment">
+<strong>OBSERVAÇÃO:</strong>
+Na Região Sul, assaltos são permitidos apenas com pistola.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>PROTEÇÃO AOS SERVIDORES PÚBLICOS</h3>
+
+<p>
+Profissionais legais devidamente uniformizados possuem proteção contra
+assaltos e sequestros enquanto estiverem em serviço.
+</p>
+
+<ul>
+<li>Mecânicos;</li>
+<li>Médicos;</li>
+<li>Advogados;</li>
+<li>Trabalhadores legais em exercício.</li>
+</ul>
+
+<p>
+Caso não esteja utilizando o uniforme de serviço, poderá receber voz de
+assalto ou sequestro.
+</p>
+
+</article>
+
+<article class="rule-card">
+
+<h3>REGRAS DE FUGA</h3>
+
+<ul>
+<li>A prioridade é uma fuga limpa e organizada;</li>
+<li>Todos os membros devem fugir juntos;</li>
+<li>É proibido retornar após fugir da ação;</li>
+<li>É proibido retornar após renascer;</li>
+<li>É proibido fugir para dentro de facções;</li>
+<li>É proibido fugir repetidamente ao redor da Praça Central;</li>
+<li>A fuga deve se desenvolver pela cidade;</li>
+<li>É proibido sair do mapa utilizando barcos ou helicópteros.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+Advertência, multas e/ou situação de foragido.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>ARMAMENTOS POR REGIÃO</h3>
+
+<div class="subtopic">
+
+<h4>REGIÃO SUL</h4>
+
+<ul>
+<li>Pistolas permitidas;</li>
+<li>Submetralhadoras permitidas;</li>
+<li>Fuzis proibidos.</li>
+</ul>
+
+</div>
+
+<div class="subtopic">
+
+<h4>REGIÃO NORTE</h4>
+
+<ul>
+<li>Permitido qualquer tipo de armamento, incluindo fuzis.</li>
+</ul>
+
+</div>
+
+<div class="punishment">
+<strong>OBSERVAÇÃO:</strong>
+A polícia poderá utilizar rifles em situações graves, priorizando pistolas e submetralhadoras.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>REGRAS GERAIS DE CONDUTA</h3>
+
+<ul>
+<li>Todas as ações devem possuir fundamento e coerência;</li>
+<li>Ações sem contexto podem ser consideradas Anti-RP;</li>
+<li>É proibido utilizar Bind para obter vantagem durante ações;</li>
+<li>É proibido utilizar animações para benefício próprio durante ações;</li>
+<li>Limite de 1 jogador por porta-malas;</li>
+<li>É proibido utilizar fardamentos de serviços públicos sem estar em serviço.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>PERSEGUIÇÃO E VEÍCULOS</h3>
+
+<p>
+Um veículo será considerado inutilizado quando seu sistema impedir a
+locomoção ou após capotamento.
+</p>
+
+<ul>
+<li>É proibido provocar colisões intencionais para obter vantagem;</li>
+<li>Colisões legítimas de interceptação poderão ser realizadas dentro do RP;</li>
+<li>Não é permitido utilizar colisões como forma de quebrar a imersão.</li>
+</ul>
+
+<div class="punishment">
+<strong>OBSERVAÇÃO:</strong>
+Colisões abusivas poderão ser consideradas Anti-RP.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>USO DE ARMAS EM VEÍCULOS</h3>
+
+<p>
+É proibido utilizar armas enquanto estiver dentro de um veículo.
+</p>
+
+<div class="subtopic">
+
+<h4>RESTRIÇÕES ADICIONAIS</h4>
+
+<ul>
+<li>É proibido atirar dentro de veículos blindados;</li>
+</ul>
+
+</div>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+60 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+</section>
+
+<!-- =========================
+     REGRAS BÁSICAS
+========================= -->
+
+<section class="category" id="basicas">
+
+<div class="category-header">
+
+<div class="category-header-left">
+
+<div class="category-icon">🛡️</div>
+
+<div>
+
+<div class="category-number">
+02 — ROLEPLAY
+</div>
+
+<h2>REGRAS BÁSICAS</h2>
+
+</div>
+
+</div>
+
+<p class="category-description">
+Regras fundamentais para manter a qualidade e a imersão do Roleplay.
+</p>
+
+</div>
+
+<article class="rule-card">
+
+<h3>POWER GAMING</h3>
+
+<p>
+Power Gaming ocorre quando um jogador realiza ações impossíveis ou
+incompatíveis com a realidade, ignorando a lógica do Roleplay.
+</p>
+
+<p>
+Também inclui aproveitar bugs ou falhas para obter vantagens indevidas.
+</p>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+Aviso.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>AMOR À VIDA</h3>
+
+<p>
+Todo jogador deve preservar a vida do seu personagem e demonstrar
+instinto de sobrevivência.
+</p>
+
+<ul>
+<li>Não reagir em situações de clara desvantagem;</li>
+<li>Não saltar de grandes alturas para evitar consequências;</li>
+<li>Não agir de forma suicida ou extremamente imprudente;</li>
+<li>Priorizar alternativas coerentes para preservar a vida.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+90 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>RANDOM DEATHMATCH — RDM</h3>
+
+<p>
+RDM é matar outro jogador sem motivo, contexto ou justificativa plausível
+dentro do Roleplay.
+</p>
+
+<ul>
+<li>Matar jogadores aleatoriamente;</li>
+<li>Atirar sem contexto;</li>
+<li>Executar um jogador cooperando sem justificativa;</li>
+<li>Atacar jogadores por diversão ou vingança fora do RP.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+90 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>FORÇAR RP</h3>
+
+<p>
+Considera-se Forçar RP criar situações artificiais apenas para obrigar
+outros jogadores a participar de ações sem fundamento.
+</p>
+
+<ul>
+<li>Provocar jogadores apenas para iniciar ações;</li>
+<li>Criar conflitos sem contexto;</li>
+<li>Obrigar jogadores a interações sem lógica;</li>
+<li>Gerar confrontos artificialmente.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+90 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>COPBAIT</h3>
+
+<p>
+CopBait é quando um jogador realiza ações com o objetivo explícito de atrair
+a intervenção policial para gerar confronto, sem possuir fundamento plausível
+no Roleplay.
+</p>
+
+<p>
+Está proibido porque prejudica a qualidade do RP, tornando as ações artificiais
+e forçadas. Queremos manter a imersão e a qualidade do Roleplay acima de tudo.
+</p>
+
+<ul>
+<li>Provocar policiais desnecessariamente;</li>
+<li>Realizar ações óbvias apenas para chamar atenção da polícia;</li>
+<li>Criar situações sem lógica com objetivo de gerar ação policial;</li>
+<li>Desrespeitar a imersão do servidor com atos puramente provocatórios.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+90 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>FLAMMING</h3>
+
+<p>
+É proibida qualquer conduta ofensiva, abusiva ou desrespeitosa contra
+jogadores, organizações, Staff ou Florida RP.
+</p>
+
+<ul>
+<li>Insultos e humilhações;</li>
+<li>Discriminação;</li>
+<li>Ameaças;</li>
+<li>Difamação;</li>
+<li>Assédio;</li>
+<li>Acusações sem provas;</li>
+<li>Campanhas de ódio.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+90 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>EVENTO HELICRASH 🚁</h3>
+
+<ul>
+<li>Policiais não podem participar;</li>
+<li>Rifles estão liberados;</li>
+<li>É proibido interferir no evento fora da área;</li>
+<li>É proibido utilizar bugs ou exploits;</li>
+<li>Após o encerramento, os confrontos devem parar imediatamente;</li>
+<li>A Staff poderá interromper ou encerrar o evento.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+60 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>DARK RP</h3>
+
+<p>
+Não serão toleradas práticas que envolvam humilhação extrema,
+preconceito, intimidação, assédio ou situações que ultrapassem os
+limites estabelecidos pela comunidade.
+</p>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+Banimento permanente.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>COMBAT LOGGING — CL</h3>
+
+<p>
+Combat Logging é desconectar voluntariamente durante uma ação para evitar
+suas consequências.
+</p>
+
+<ul>
+<li>Desconectar durante confrontos;</li>
+<li>Sair durante abordagens;</li>
+<li>Evitar prisão ou sequestro desconectando;</li>
+<li>Preservar itens ou vantagens saindo do servidor.</li>
+</ul>
+
+<div class="subtopic">
+
+<h4>ERROS TÉCNICOS</h4>
+
+<p>
+Crashes, Timeout, erros e quedas deverão ser comprovados caso solicitado.
+</p>
+
+<p>
+Em caso de queda de energia, o jogador deverá retornar sempre que possível
+e apresentar evidências caso necessário.
+</p>
+
+</div>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+90 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>METAGAMING — MG</h3>
+
+<p>
+Metagaming é utilizar informações externas ao Roleplay para obter vantagem
+dentro do servidor.
+</p>
+
+<ul>
+<li>Utilizar Discord ou WhatsApp para obter informações externas;</li>
+<li>Utilizar informações de lives;</li>
+<li>Localizar jogadores com informações externas;</li>
+<li>Compartilhar informações que o personagem não adquiriu dentro do RP;</li>
+<li>Reconhecer personagem mascarado sem fundamento no RP.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+90 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>NOMES DE PERSONAGEM</h3>
+
+<p>
+Todo personagem deverá possuir nome e sobrenome compatíveis com um
+registro civil.
+</p>
+
+<div class="subtopic">
+
+<h4>EXEMPLOS PERMITIDOS</h4>
+
+<ul>
+<li>Lucas Silva;</li>
+<li>André Ferrari;</li>
+<li>Gabriel Oliveira;</li>
+<li>João Henrique.</li>
+</ul>
+
+</div>
+
+<div class="subtopic">
+
+<h4>EXEMPLOS PROIBIDOS</h4>
+
+<ul>
+<li>LZ;</li>
+<li>Luizin;</li>
+<li>Pecinha;</li>
+<li>LC;</li>
+<li>Neguin;</li>
+<li>ReiDoCrime;</li>
+<li>XxMatadorxX.</li>
+</ul>
+
+</div>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+A Administração poderá exigir alteração imediata.
+</div>
+
+</article>
+
+</section>
+
+<!-- =========================
+     REGRAS ILEGAIS
+========================= -->
+
+<section class="category" id="ilegal">
+
+<div class="category-header">
+
+<div class="category-header-left">
+
+<div class="category-icon">🚨</div>
+
+<div>
+
+<div class="category-number">
+03 — CRIMINALIDADE
+</div>
+
+<h2>REGRAS ILEGAIS</h2>
+
+</div>
+
+</div>
+
+<p class="category-description">
+Normas para organizações criminosas, confrontos e atividades ilegais.
+</p>
+
+</div>
+
+<article class="rule-card">
+
+<h3>REGRAS GERAIS</h3>
+
+<p>
+É proibido utilizar capacetes ou objetos com o objetivo de obter vantagem
+indevida em confrontos.
+</p>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+3 dias de banimento.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>ALIANÇAS ENTRE FACÇÕES</h3>
+
+<p>
+É permitido alinhamento entre facções que trabalham com produtos diferentes.
+É limitada uma aliança por segmento.
+</p>
+
+<p>
+Exemplo: uma facção de drogas poderá se aliar a uma facção de armas,
+mas não a outra facção de drogas.
+</p>
+
+</article>
+
+<article class="rule-card">
+
+<h3>NEGOCIAÇÃO</h3>
+
+<ul>
+<li>É proibido matar durante negociação sem motivo plausível;</li>
+<li>É proibido lootear jogadores sem participar da ação;</li>
+<li>É proibido lootear policiais, exceto em situações autorizadas pelas regras.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>REAÇÃO À ABORDAGEM POLICIAL</h3>
+
+<ul>
+<li>Respeitar a proporcionalidade da situação;</li>
+<li>Não desembarcar imediatamente para iniciar confronto sem contexto;</li>
+<li>Priorizar fuga quando houver possibilidade plausível;</li>
+<li>Confronto deve ser último recurso;</li>
+<li>É proibido reagir em desvantagem extrema.</li>
+</ul>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+60 minutos de prisão + 1 advertência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>CÓDIGO 3</h3>
+
+<ul>
+<li>Quando houver capotamento;</li>
+<li>Quando o cidadão ameaçar policial;</li>
+<li>Quando houver tentativa de atropelamento;</li>
+<li>Após 5 minutos de fuga;</li>
+<li>Após liberação, poderá ser furado 1 pneu a cada minuto.</li>
+</ul>
+
+</article>
+
+</section>
+
+<!-- =========================
+     POLÍCIA
+========================= -->
+
+<section class="category" id="policia">
+
+<div class="category-header">
+
+<div class="category-header-left">
+
+<div class="category-icon">👮</div>
+
+<div>
+
+<div class="category-number">
+04 — SEGURANÇA PÚBLICA
+</div>
+
+<h2>REGRAS DA POLÍCIA</h2>
+
+</div>
+
+</div>
+
+<p class="category-description">
+Procedimentos e normas destinados às corporações policiais.
+</p>
+
+</div>
+
+<article class="rule-card">
+
+<h3>ABORDAGENS E REVISTA</h3>
+
+<p>
+Abordagens deverão possuir fundamento e respeitar os princípios do Roleplay.
+</p>
+
+<ul>
+<li>Direção perigosa;</li>
+<li>Uso suspeito de máscara;</li>
+<li>Indícios de armamento;</li>
+<li>Atitude suspeita;</li>
+<li>Envolvimento em ocorrência ou investigação.</li>
+</ul>
+
+<p>
+A simples vontade do policial não é justificativa suficiente para revista.
+</p>
+
+</article>
+
+<article class="rule-card">
+
+<h3>PROCEDIMENTO DA REVISTA</h3>
+
+<ul>
+<li>Sempre que possível, realizada por agente do mesmo sexo;</li>
+<li>Na impossibilidade, utilizar os procedimentos disponíveis pela corporação;</li>
+<li>É proibido realizar revista em jogadores abatidos sem seguir o procedimento padrão.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>CÓDIGO 5</h3>
+
+<ul>
+<li>Pular na água com veículo;</li>
+<li>Abater civil ou policial;</li>
+<li>Abrir fogo contra guarnição;</li>
+<li>Resgatar indivíduo em ocorrência de Código 5;</li>
+<li>Roubo de viatura.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>USO DE TASER</h3>
+
+<ul>
+<li>Após ordens claras para desembarque;</li>
+<li>Persistindo a recusa, poderá ser utilizado proporcionalmente;</li>
+<li>Em situações de desacato ou resistência, conforme contexto;</li>
+<li>Ao visualizar indivíduo procurado, conforme os procedimentos da corporação.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>FAVELAS</h3>
+
+<p>
+A polícia poderá realizar contenção externa quando houver situação que
+justifique a ação, respeitando os limites definidos para a área.
+</p>
+
+<ul>
+<li>É proibida a entrada indevida na área restrita;</li>
+<li>QRR não pode ser utilizada apenas para provocar confronto;</li>
+<li>Disparos devem respeitar risco à vida e contexto da ocorrência.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>LIMITE DE UNIDADES POR QRU</h3>
+
+<ul>
+<li>Máximo de 6 unidades por QRU;</li>
+<li>Viatura convencional = 1 unidade;</li>
+<li>Motocicleta = 0,5 unidade;</li>
+<li>Helicóptero = 2 unidades;</li>
+<li>Speed = 2 unidades.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>REGRAS DE TOCAIA</h3>
+
+<ul>
+<li>É permitido quando houver fundamento;</li>
+<li>Negociações ilegais podem gerar tocaia;</li>
+<li>Deve existir motivo plausível;</li>
+<li>É proibido realizar tocaia aleatória.</li>
+</ul>
+
+<div class="punishment">
+<strong>OBSERVAÇÃO:</strong>
+Sempre que possível, registre a ocorrência.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>USO DE FUZIL PELA POLÍCIA</h3>
+
+<p>
+Os policiais deverão priorizar o uso de pistolas e submetralhadoras durante
+operações e confrontos.
+</p>
+
+<p>
+O uso de fuzis é restrito apenas para situações extremas em que a ocorrência
+esteja completamente fora de controle ou represente risco grave à vida.
+</p>
+
+<div class="subtopic">
+
+<h4>SITUAÇÕES AUTORIZADAS</h4>
+
+<ul>
+<li>Confronto com múltiplos criminosos armados;</li>
+<li>Ameaça à vida de reféns ou civis;</li>
+<li>Operação em área de alto risco previamente identificada;</li>
+<li>Situação que justifique escalada de poder de fogo.</li>
+</ul>
+
+</div>
+
+<div class="subtopic">
+
+<h4>ARMAMENTO PADRÃO</h4>
+
+<ul>
+<li>Primeira opção: Pistola;</li>
+<li>Segunda opção: Submetralhadora;</li>
+<li>Última opção: Fuzil.</li>
+</ul>
+
+</div>
+
+<div class="punishment">
+<strong>PUNIÇÃO:</strong>
+60 minutos de prisão + 1 advertência (em caso de uso injustificado).
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>PERSONAGEM FEMININA</h3>
+
+<ul>
+<li>Personagem feminina poderá ser conduzida normalmente;</li>
+<li>Não existem vantagens especiais por gênero;</li>
+<li>As regras do Roleplay devem ser respeitadas por todos.</li>
+</ul>
+
+</article>
+
+</section>
+
+<!-- =========================
+     AÇÕES
+========================= -->
+
+<section class="category" id="acoes">
+
+<div class="category-header">
+
+<div class="category-header-left">
+
+<div class="category-icon">⚔️</div>
+
+<div>
+
+<div class="category-number">
+05 — OPERAÇÕES
+</div>
+
+<h2>REGRAS DE AÇÕES</h2>
+
+</div>
+
+</div>
+
+<p class="category-description">
+Roubo, negociação, operações especiais e ações envolvendo polícia e criminosos.
+</p>
+
+</div>
+
+<article class="rule-card">
+
+<h3>REGRAS GERAIS DE AÇÕES</h3>
+
+<ul>
+<li>É proibida entrada de veículos nos locais de roubo, salvo exceções;</li>
+<li>É proibido uso de drogas durante ações;</li>
+<li>É proibido lootear policiais durante ações quando vedado pelas regras;</li>
+<li>Sem máscara, o jogador poderá ser reconhecido posteriormente;</li>
+<li>Não é obrigatório negociar quando não houver reféns;</li>
+<li>Com reféns, os criminosos deverão informar ou aguardar a chegada da polícia conforme a situação.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>DISPUTA DE LOCAIS DE ROUBO</h3>
+
+<p>
+É proibido disputar locais de roubo.
+</p>
+
+<p>
+Caso jogadores já estejam iniciando ou preparando uma ação, é proibido
+iniciar confronto apenas para tomar o local ou atrapalhar a ocorrência.
+</p>
+
+</article>
+
+<article class="rule-card">
+
+<h3>NEGOCIAÇÃO</h3>
+
+<p>
+Em ações fechadas, determinados itens e condições poderão ser inegociáveis.
+</p>
+
+<ul>
+<li>Drone;</li>
+<li>Doze;</li>
+<li>Apreensão de itens;</li>
+<li>Prisão.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>LIMITES DE NEGOCIAÇÃO</h3>
+
+<div class="subtopic">
+
+<h4>AÇÕES FORA DE SEQUESTRO</h4>
+
+<p>
+Máximo de R$ 80 mil de dinheiro sujo por refém.
+</p>
+
+</div>
+
+<div class="subtopic">
+
+<h4>SEQUESTROS</h4>
+
+<p>
+Máximo de R$ 100 mil de dinheiro sujo por refém.
+</p>
+
+</div>
+
+<div class="subtopic">
+
+<h4>OUTROS LIMITES</h4>
+
+<ul>
+<li>Máximo de 2 coletes por refém;</li>
+<li>Retirada do atirador do Águia: 2 reféns;</li>
+<li>Escolher entre dinheiro sujo ou coletes;</li>
+<li>Não negociar ambos pelo mesmo refém.</li>
+</ul>
+
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>POLÍCIA EM AÇÕES</h3>
+
+<ul>
+<li>A polícia poderá agir ao identificar oportunidade de salvar o refém;</li>
+<li>Após negociação, disparos devem respeitar a segurança do refém;</li>
+<li>Piloto do Águia não conta como membro da ação;</li>
+<li>Resgate de parceiro preso é permitido até sua colocação na viatura;</li>
+<li>Após entrar na viatura, é proibida intervenção.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>ATM E CAIXINHAS</h3>
+
+<ul>
+<li>A polícia não precisa aguardar o término do roubo;</li>
+<li>Ao perceber a aproximação policial, o criminoso deverá agir conforme o contexto;</li>
+<li>Pode cancelar a ação, sair do local ou iniciar fuga;</li>
+<li>Forçar a continuidade poderá resultar em medidas policiais.</li>
+</ul>
+
+<div class="punishment">
+<strong>OBSERVAÇÃO:</strong>
+A polícia deverá se aproximar com giroflex e sinais sonoros ligados.
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>AÇÃO AÇOUGUE</h3>
+
+<ul>
+<li>Contingente obrigatório de criminosos: 8;</li>
+<li>Máximo de policiais: 11;</li>
+<li>Armamento: Sub/Pistola;</li>
+<li>Proibido marcar drop;</li>
+<li>Proibido utilizar veículos para rotação;</li>
+<li>Não é possível negociar fuga.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>FLEECA</h3>
+
+<ul>
+<li>Contingente obrigatório de criminosos: 8;</li>
+<li>Máximo de policiais: 12;</li>
+<li>Armamento: Sub/Fuzil;</li>
+<li>Proibido marcar drop;</li>
+<li>Proibido veículos para rotação;</li>
+<li>Máximo de 3 carros na fuga.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>AÇÃO AMMU NATION</h3>
+
+<ul>
+<li>Contingente obrigatório de criminosos: 2;</li>
+<li>Máximo de policiais: 3;</li>
+<li>Armamento: Pistola;</li>
+<li>Proibido marcar drop;</li>
+<li>Proibido veículo para rotação;</li>
+<li>Não é possível negociar fuga.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>AÇÃO NIOBIO</h3>
+
+<ul>
+<li>Contingente obrigatório de criminosos: 12;</li>
+<li>Máximo de policiais: 17;</li>
+<li>Armamento: Fuzil/Sub;</li>
+<li>Proibido marcar drop;</li>
+<li>Proibido veículos para rotação;</li>
+<li>Não é possível negociar fuga;</li>
+<li>Não possui entrada P2.</li>
+</ul>
+
+</article>
+
+</section>
+
+<!-- =========================
+     SEQUESTROS
+========================= -->
+
+<section class="category" id="sequestro">
+
+<div class="category-header">
+
+<div class="category-header-left">
+
+<div class="category-icon">🔒</div>
+
+<div>
+
+<div class="category-number">
+06 — REFÉNS
+</div>
+
+<h2>REGRAS DE SEQUESTRO</h2>
+
+</div>
+
+</div>
+
+<p class="category-description">
+Normas para ações envolvendo sequestros e reféns.
+</p>
+
+</div>
+
+<article class="rule-card">
+
+<h3>ARMAMENTOS</h3>
+
+<div class="subtopic">
+
+<h4>REGIÃO SUL</h4>
+
+<ul>
+<li>Pistolas permitidas;</li>
+<li>SMGs permitidas;</li>
+<li>Fuzis proibidos.</li>
+</ul>
+
+</div>
+
+<div class="subtopic">
+
+<h4>REGIÃO NORTE</h4>
+
+<p>
+Permitido qualquer tipo de armamento.
+</p>
+
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>REGRAS GERAIS</h3>
+
+<ul>
+<li>Todo sequestro deve possuir fundamento dentro do RP;</li>
+<li>Deve existir motivação plausível;</li>
+<li>É proibido sequestrar dentro do hospital;</li>
+<li>É proibido utilizar motocicletas;</li>
+<li>É obrigatório utilizar algemas;</li>
+<li>É proibido sequestrar trabalhadores legais uniformizados em serviço.</li>
+</ul>
+
+</article>
+
+<article class="rule-card">
+
+<h3>CONDUTA DO SEQUESTRADO</h3>
+
+<ul>
+<li>Manter a imersão no Roleplay;</li>
+<li>Demonstrar medo e preocupação compatíveis com a situação;</li>
+<li>É proibido fazer piadas ou agir como se não existisse risco;</li>
+<li>É proibido realizar selfies durante o sequestro.</li>
+</ul>
+
+</article>
+
+</section>
+
+<!-- =========================
+     PUNIÇÕES
+========================= -->
+
+<section class="category" id="punicoes">
+
+<div class="category-header">
+
+<div class="category-header-left">
+
+<div class="category-icon">⚠️</div>
+
+<div>
+
+<div class="category-number">
+07 — DISCIPLINA
+</div>
+
+<h2>PUNIÇÕES</h2>
+
+</div>
+
+</div>
+
+<p class="category-description">
+Sistema disciplinar utilizado pela Administração da Florida RP.
+</p>
+
+</div>
+
+<article class="rule-card">
+
+<h3>TABELA DE INFRAÇÕES</h3>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Infração</th>
+<th>Punição</th>
+<th>Advertências</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>RDM</td>
+<td>90 minutos de prisão</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>VDM</td>
+<td>90 minutos de prisão</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Combat Logging</td>
+<td>90 minutos de prisão</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Anti-RP</td>
+<td>90 minutos de prisão</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Metagaming</td>
+<td>90 minutos de prisão</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Anti Amor à Vida</td>
+<td>90 minutos de prisão</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Flamming</td>
+<td>90 minutos de prisão</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Dark RP</td>
+<td>Banimento permanente</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Forçar RP</td>
+<td>60 minutos de prisão</td>
+<td>1</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</article>
+
+<article class="rule-card">
+
+<h3>SISTEMA DE ADVERTÊNCIAS</h3>
+
+<p>
+Toda punição aplicada pela equipe administrativa poderá resultar no
+acréscimo de advertências ao jogador, salvo determinação diferente da
+Administração.
+</p>
+
+<div class="subtopic">
+
+<h4>ACÚMULO DE ADVERTÊNCIAS</h4>
+
+<ul>
+<li><strong>3 advertências:</strong> Banimento de 3 dias;</li>
+<li><strong>4 advertências:</strong> Banimento de 7 dias;</li>
+<li><strong>5 advertências:</strong> Banimento permanente.</li>
+</ul>
+
+</div>
+
+<div class="punishment">
+
+<strong>OBSERVAÇÃO:</strong>
+
+As advertências possuem caráter disciplinar. A Administração poderá aplicar
+medidas adicionais em casos graves ou reincidentes.
+
+</div>
+
+</article>
+
+</section>
+
+</div>
+
+</main>
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="rules-final">
+
+<div class="section-number">
+FLORIDA RP — REGULAMENTO
+</div>
+
+<h2>
+RESPEITE AS REGRAS.<br>
+<span>VIVA A HISTÓRIA.</span>
+</h2>
+
+<p>
+O Roleplay é construído por todos. Respeite os jogadores,
+siga o regulamento e contribua para uma Florida RP cada vez melhor.
+</p>
+
+<a href="#inicio" class="btn btn-primary">
+VOLTAR AO TOPO
+</a>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<a href="#inicio" class="logo">
+FLORIDA<span>RP</span>
+</a>
+
+<p class="footer-description">
+Uma nova experiência de Roleplay.
+Construa sua história, escolha seu caminho e respeite
+as regras da Florida RP.
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h4>NAVEGAÇÃO</h4>
+
+<a href="#inicio">Início</a> <a href="#gerais">Regras Gerais</a> <a href="#basicas">Regras Básicas</a> <a href="#ilegal">Regras Ilegais</a> <a href="#policia">Polícia</a>
+
+</div>
+
+<div class="footer-column">
+
+<h4>REGULAMENTO</h4>
+
+<a href="#acoes">Ações</a> <a href="#sequestro">Sequestros</a> <a href="#punicoes">Punições</a> <a href="#inicio">Voltar ao topo</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+<span>
+©   <span>© UZN GROUP - SÓCIOS UZN STORE</span>
+</span>
+
+<span>
+FLORIDA RP — REGRAS OFICIAIS.
+</span>
+
+</div>
+
+</footer>
+
+<script>
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+const menuMobile =
+document.getElementById("menuMobile");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuMobile.addEventListener("click",function(){
+
+navLinks.classList.toggle("active");
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+link.addEventListener("click",function(){
+
+navLinks.classList.remove("active");
+
+});
+
+});
+
+
+/* =========================
+   HEADER
+========================= */
+
+const header =
+document.getElementById("header");
+
+window.addEventListener("scroll",function(){
+
+if(window.scrollY>50){
+
+header.classList.add("scrolled");
+
+}else{
+
+header.classList.remove("scrolled");
+
+}
+
+});
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+const searchInput =
+document.getElementById("ruleSearch");
+
+const cards =
+document.querySelectorAll(".rule-card");
+
+const clearButton =
+document.getElementById("clearSearch");
+
+const noResults =
+document.getElementById("noResults");
+
+const searchInfo =
+document.getElementById("searchInfo");
+
+
+searchInput.addEventListener("input",function(){
+
+const query =
+this.value
+.trim()
+.toLowerCase();
+
+let count=0;
+
+clearButton.style.display =
+query ? "block" : "none";
+
+
+cards.forEach(card=>{
+
+const text =
+card.innerText.toLowerCase();
+
+if(text.includes(query)){
+
+card.classList.remove("search-hidden");
+
+count++;
+
+}else{
+
+card.classList.add("search-hidden");
+
+}
+
+});
+
+
+if(!query){
+
+cards.forEach(card=>{
+card.classList.remove("search-hidden");
+});
+
+noResults.style.display="none";
+
+searchInfo.textContent =
+"Digite uma palavra para pesquisar em todas as regras.";
+
+return;
+
+}
+
+
+searchInfo.textContent =
+count+" regra(s) encontrada(s) para: "+this.value;
+
+noResults.style.display =
+count===0 ? "block" : "none";
+
+});
+
+
+/* =========================
+   LIMPAR PESQUISA
+========================= */
+
+function clearSearch(){
+
+searchInput.value="";
+
+cards.forEach(card=>{
+card.classList.remove("search-hidden");
+});
+
+clearButton.style.display="none";
+
+noResults.style.display="none";
+
+searchInfo.textContent =
+"Digite uma palavra para pesquisar em todas as regras.";
+
+searchInput.focus();
+
+}
+
+
+/* =========================
+   MENU ATIVO
+========================= */
+
+const sections =
+document.querySelectorAll(".category,.hero");
+
+const menuItems =
+document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll",function(){
+
+let current="";
+
+sections.forEach(section=>{
+
+const top =
+section.offsetTop-180;
+
+if(window.scrollY>=top){
+
+current =
+section.getAttribute("id");
+
+}
+
+});
+
+
+menuItems.forEach(link=>{
+
+link.classList.remove("active");
+
+if(link.getAttribute("href")==="#"+current){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
